@@ -61,6 +61,7 @@ class _HomeState extends State<Home> {
             _lastRemovedPos = index;
             _Todolist.removeAt(index);
             _saveData();
+
             final snack = SnackBar(
                 content: Text('Tarefa ${_lastRemoved['title']} removida!'),
                 backgroundColor: Colors.grey,
@@ -99,6 +100,7 @@ void _addToDo() {
     _ToDocontroller.text = '';
     newTodo['ok'] = false;
     _Todolist.add(newTodo);
+    _saveData();
   });
 }
 
